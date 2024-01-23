@@ -4,12 +4,15 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <h1>Qwik UI Component with Real data</h1>
+    <div class="flex justify-center align-middle">
+    <h1>Qwik UI Component with Real data</h1>
       <p>
         Coming soon
         <br />
         
       </p>
+    </div>
+     
     </>
   );
 });
