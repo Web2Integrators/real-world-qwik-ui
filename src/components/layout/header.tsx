@@ -13,10 +13,11 @@ export default component$(() => {
     <header class={styles.header}>
       <ul>
         <li>
+          {session.value?.user?.email}
           {session.value?.user?.email ? (
-            <>
+           
               <SignOut />
-            </>
+            
           ) : (
             <SignIn />
           )}
