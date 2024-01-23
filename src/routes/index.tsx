@@ -4,11 +4,11 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <h1>MT4👋</h1>
+      <h1>Qwik UI Component with Real data</h1>
       <p>
-        Can't wait to see what you build with qwik!
+        Coming soon
         <br />
-        Happy coding.
+        
       </p>
     </>
   );
