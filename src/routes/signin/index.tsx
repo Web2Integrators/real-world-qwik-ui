@@ -41,25 +41,7 @@ export default component$(() => {
             <div class="pt-4">
               <SignIn />
             </div>
-            <p class="px-8 text-center text-sm">
-              By creating an account, you agree to our{" "}
-              <Link
-                prefetch
-                href="/pub/terms-of-service"
-                class="underline underline-offset-4 hover:text-primary"
-              >
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link
-                prefetch
-                href="/pub/privacy-policy"
-                class="underline underline-offset-4 hover:text-primary"
-              >
-                Privacy Policy
-              </Link>
-              .
-            </p>
+          
           </div>
         </div>
       </div>

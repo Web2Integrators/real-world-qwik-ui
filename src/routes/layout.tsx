@@ -23,8 +23,7 @@ export const onRequest: RequestHandler = async ({
   const session: Session | null = sharedMap.get("session");
   if (
     !session &&
-    url.pathname !== "/signin/" &&
-    !url.pathname.startsWith("/pub/")
+    url.pathname !== "/signin/" 
   ) {
     throw redirect(302, `/signin/`);
   }
