@@ -1,3 +1,4 @@
+import { Session } from "@auth/core/types";
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import Header from "~/components/layout/header";
@@ -12,6 +13,21 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
     // Max once every 5 seconds, revalidate on the server to get a fresh version of this page
     maxAge: 5,
   });
+};
+
+export const onRequest: RequestHandler = async ({
+  sharedMap,
+  url,
+  redirect,
+}) => {
+  const session: Session | null = sharedMap.get("session");
+  if (
+    !session &&
+    url.pathname !== "/signin/" &&
+    !url.pathname.startsWith("/pub/")
+  ) {
+    throw redirect(302, `/signin/`);
+  }
 };
 
 export default component$(() => {
