@@ -3,14 +3,12 @@ import { Form } from "@builder.io/qwik-city";
 import { useAuthSignin } from "~/routes/plugin@auth";
 
 export default component$(() => {
-    const signIn = useAuthSignin();
+  const signIn = useAuthSignin();
+
   return (
-    <>
-      <Form action={signIn}>
-      
+    <Form action={signIn} class="flex justify-center">
       <input type="hidden" name="options.callbackUrl" value="/" />
-      <button>Sign In</button>
+      <button type="submit">Sign In</button>
     </Form>
-    </>
   );
 });
