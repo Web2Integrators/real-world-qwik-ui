@@ -9,6 +9,9 @@ export default defineConfig((): UserConfig => {
     define: {
       'process.env': JSON.stringify(process.env)
     },
+    optimizeDeps: {
+      include: [ "@auth/core" ]
+    },
     server: {
       headers: {
         "Cache-Control": "public, max-age=0",

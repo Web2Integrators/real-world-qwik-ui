@@ -8,9 +8,6 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
     secret: env.get("AUTH_SECRET"),
     trustHost: true,
 
-  
-
-
     providers: [
       GitHub({
         clientId: env.get("GITHUB_ID")!,
