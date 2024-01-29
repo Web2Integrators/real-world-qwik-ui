@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 
 
-import { Link } from "@builder.io/qwik-city";
+
 import SignIn from "~/components/auth/sign-in";
 
 export default component$(() => {
@@ -20,7 +20,7 @@ export default component$(() => {
             <div class="">
               <blockquote class="space-y-2">
                 <p class="text-lg">
-                  &ldquo;The 𝕏 stack will definitely be the go to place for
+                  &ldquo;The 𝕏 stack will definitely be the go to place forwwwwwwwwwwww
                   building apps on the everything app.&rdquo;
                 </p>
                 <footer class="text-sm">Mush</footer>

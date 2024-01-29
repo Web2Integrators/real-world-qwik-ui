@@ -1,8 +1,7 @@
 import { Session } from "@auth/core/types";
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-import Header from "~/components/layout/header";
-
+import Header from "~/components/ui-landing/header";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -21,11 +20,10 @@ export const onRequest: RequestHandler = async ({
   redirect,
 }) => {
   const session: Session | null = sharedMap.get("session");
-  if (
-    !session &&
-    url.pathname !== "/signin/" 
-  ) {
-    throw redirect(302, `/signin/`);
+  if (!session && url.pathname !== "auth/") {
+    // throw redirect(302, `auth/`);
+  } else {
+    throw redirect(302, `dashboard/`);
   }
 };
 
@@ -33,10 +31,12 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <main class="container mx-auto px-4">
-        <Slot  />
+
+      <main class="grow">
+        <Slot />
       </main>
+
+      {/* <Footer /> */}
     </>
   );
-  return <Slot />;
 });

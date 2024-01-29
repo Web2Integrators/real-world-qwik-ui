@@ -1,17 +1,15 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useTask$} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  useTask$(() => {
+    console.log("Component is visible");
+  });
+
   return (
     <>
-      <div class="flex justify-center align-middle">
-        <h1>Qwik UI Component with Real data</h1>
-        <p>
-          Coming soon
-          <br />
-        </p>
-      </div>
-    </>
+        
+    </> 
   );
 });
 

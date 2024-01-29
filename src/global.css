@@ -1,3 +1,7 @@
+
+@import 'css/additional-styles/utility-patterns.css';
+@import 'css/additional-styles/theme.css';
+
 /**
  * Tailwind CSS imports
  * View the full documentation at https://tailwindcss.com
@@ -6,6 +10,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Additional styles */
+
 /**
  * WHAT IS THIS FILE?
  *
@@ -13,29 +19,8 @@
  * the styles in here will be applied to the Document, without any sort of CSS scoping.
  *
  */
-html {
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
-}
-
-body {
-  padding: 0;
-  line-height: inherit;
+ @layer base {
+  html {
+    @apply scroll-smooth;
+  }
 }

@@ -4,7 +4,9 @@ import Discord from "@auth/core/providers/discord";
 import type { Provider } from "@auth/core/providers";
 
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
-  serverAuth$(({ env }) => ({
+  serverAuth$(({ env }) => (
+    console.log("AUTH_SECRET", env.get("AUTH_SECRET")),
+    {
     secret: env.get("AUTH_SECRET"),
     trustHost: true,
 

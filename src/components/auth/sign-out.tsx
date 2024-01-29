@@ -5,7 +5,7 @@ export default component$(() => {
   const signOut = useAuthSignout();
   return (
     <>
-      <button onClick$={() => signOut.submit({ callbackUrl: "/" })}>
+      <button onClick$={() => signOut.submit({ callbackUrl: "/auth" })}>
         Sign Out
       </button>
     </>

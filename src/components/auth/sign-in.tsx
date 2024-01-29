@@ -7,7 +7,7 @@ export default component$(() => {
 
   return (
     <Form action={signIn} class="flex justify-center">
-      <input type="hidden" name="options.callbackUrl" value="/" />
+      <input type="hidden" name="options.callbackUrl" value="/dashboard" />
       <button type="submit">Sign In</button>
     </Form>
   );

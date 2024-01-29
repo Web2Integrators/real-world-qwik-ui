@@ -15,7 +15,6 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
-
   return (
     <QwikCityProvider>
       <head>
@@ -23,9 +22,14 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body lang="en">
-        <RouterOutlet />
-        <ServiceWorkerRegister />
+      <body
+        class="font-inter bg-slate-900 tracking-tight text-slate-100 antialiased"
+        lang="en"
+      >
+        <div class="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+          <RouterOutlet />
+          <ServiceWorkerRegister />
+        </div>
       </body>
     </QwikCityProvider>
   );
