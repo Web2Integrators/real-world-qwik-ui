@@ -1,11 +1,29 @@
-import { component$, useSignal } from "@builder.io/qwik"
+import { component$, useOnDocument, useSignal,$ } from "@builder.io/qwik"
 
 
 export default  component$(() =>{
  
   const mobileNavOpen = useSignal<boolean>(false);
   const trigger = useSignal<HTMLButtonElement>();
-  const mobileNav = useSignal<HTMLDivElement>()
+  const mobileNav = useSignal<HTMLDivElement>();
+
+  useOnDocument(
+    'keydown',
+    $(({ keyCode }: { keyCode: number }) => {
+      if (!mobileNavOpen.value || keyCode !== 27) return;
+       mobileNavOpen.value = false;
+    }),
+    
+  );
+
+  useOnDocument(
+    'click',
+    $(() => {
+      
+       mobileNavOpen.value = false;
+    }),
+    
+  );
 
   // close the mobile menu on click outside
   // useTask$(() => {

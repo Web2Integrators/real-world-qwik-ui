@@ -1,6 +1,6 @@
 import { Session } from "@auth/core/types";
 import { component$, Slot } from "@builder.io/qwik";
-import type { RequestHandler } from "@builder.io/qwik-city";
+import { routeLoader$, type RequestHandler } from "@builder.io/qwik-city";
 import Header from "~/components/ui-landing/header";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
@@ -13,6 +13,18 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
     maxAge: 5,
   });
 };
+
+export const useProductDetails = routeLoader$(async () => {
+  // This code runs only on the server, after every navigation
+
+  const res = await fetch(
+    "https://raw.githubusercontent.com/cruip/cruip-dummy/main/job-board-posts.json",
+  );
+  if (!res.ok) throw new Error("failed to fetch data");
+  const product = await res.json();
+
+  return product as any;
+});
 
 export const onRequest: RequestHandler = async ({
   sharedMap,
@@ -30,9 +42,10 @@ export const onRequest: RequestHandler = async ({
 export default component$(() => {
   return (
     <>
+     
       <Header />
 
-      <main class="grow">
+      <main class="flex min-h-screen grow flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
         <Slot />
       </main>
 
