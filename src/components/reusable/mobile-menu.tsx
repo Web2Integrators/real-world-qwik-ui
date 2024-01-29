@@ -1,8 +1,8 @@
-import { component$, useSignal, useTask$ } from "@builder.io/qwik"
+import { component$, useSignal } from "@builder.io/qwik"
 
 
 export default  component$(() =>{
-  //const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
+ 
   const mobileNavOpen = useSignal<boolean>(false);
   const trigger = useSignal<HTMLButtonElement>();
   const mobileNav = useSignal<HTMLDivElement>()
@@ -34,7 +34,7 @@ export default  component$(() =>{
         ref={trigger}
         class={`hamburger ${mobileNavOpen.value && 'active'}`}
         aria-controls="mobile-nav"
-        aria-expanded={mobileNavOpen}
+        aria-expanded={mobileNavOpen.value}
         onClick$={() => mobileNavOpen.value = !mobileNavOpen.value}
         
       >
