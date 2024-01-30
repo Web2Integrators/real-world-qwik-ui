@@ -1,12 +1,13 @@
 import { component$ } from "@builder.io/qwik";
-
-export default component$(() => {
+import { Product } from "~/routes/layout";
+interface ChildProps {
+  userData: Product[];
+}
+export default component$<ChildProps>(({ userData }) => {
   return (
     <>
       <section>
-        <div class="relative max-w-6xl px-4 mx-auto sm:px-6">
-
-       
+        <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
           {/* Particles animation */}
           {/* <Particles class="absolute inset-0 -z-10" /> */}
 
@@ -15,7 +16,6 @@ export default component$(() => {
             class="pointer-events-none absolute inset-0 -z-10 -mx-28 overflow-hidden rounded-b-[3rem]"
             aria-hidden="true"
           >
-            
             {/* <div class="absolute bottom-0 -translate-x-1/2 left-1/2 -z-10">
               <Image
                 src={Illustration}
@@ -27,10 +27,24 @@ export default component$(() => {
             </div> */}
           </div>
 
-          <div class="pt-32 pb-16 md:pb-32 md:pt-52">
+          <div class="pb-16 pt-32 md:pb-32 md:pt-52">
             {/* Hero content */}
-          
-            <div class="max-w-3xl mx-auto text-center">
+           <h1 class="h1 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text pb-4 text-transparent">Some Random data from api</h1>
+            {userData ? (
+        <ul>
+          {Object.entries(userData).map(([key, value]) => (
+            <li key={key}>
+              <strong>{key}:</strong> {value.title}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul>
+          <li>No user data available.</li>
+        </ul>
+      )}
+
+            <div class="mx-auto max-w-3xl text-center">
               <div class="mb-6" data-aos="fade-down">
                 <div class="relative inline-flex before:absolute before:inset-0 before:bg-purple-500 before:blur-md">
                   <a
@@ -47,28 +61,55 @@ export default component$(() => {
                 </div>
               </div>
               <h1
-                class="pb-4 text-transparent h1 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text"
+                class="h1 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text pb-4 text-transparent"
                 data-aos="fade-down"
               >
-                The API Security Framework
+                Instant Web app
               </h1>
               <p
                 class="mb-8 text-lg text-slate-300"
                 data-aos="fade-down"
                 data-aos-delay="200"
               >
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+                1.Server side rendered out of box.
+              </p>
+              <p
+                class="mb-8 text-lg text-slate-300"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+               2.Resumable
+              </p>
+              <p
+                class="mb-8 text-lg text-slate-300"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+               3.avoid javscript as much possible
+              </p>
+              <p
+                class="mb-8 text-lg text-slate-300"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+               4.Javascript streaming
+              </p>
+              <p
+                class="mb-8 text-lg text-slate-300"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+               5.Fine grained reactivity using signal /This is possible in angular using signal..
               </p>
               <div
-                class="max-w-xs mx-auto space-y-4 sm:inline-flex sm:max-w-none sm:justify-center sm:space-x-4 sm:space-y-0"
+                class="mx-auto max-w-xs space-y-4 sm:inline-flex sm:max-w-none sm:justify-center sm:space-x-4 sm:space-y-0"
                 data-aos="fade-down"
                 data-aos-delay="400"
               >
                 <div>
-                  <button onClick$={() => alert('CLICKED!')}
-                    class="w-full transition duration-150 ease-in-out btn group bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 hover:bg-white"
-                   
+                  <button
+                    onClick$={() => alert("CLICKED!")}
+                    class="btn group w-full bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 transition duration-150 ease-in-out hover:bg-white"
                   >
                     Get Started{" "}
                     <span class="ml-1 tracking-normal text-purple-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
@@ -78,7 +119,7 @@ export default component$(() => {
                 </div>
                 <div>
                   <a
-                    class="w-full transition duration-150 ease-in-out bg-opacity-25 btn bg-slate-900 text-slate-200 hover:bg-opacity-30 hover:text-white"
+                    class="btn w-full bg-slate-900 bg-opacity-25 text-slate-200 transition duration-150 ease-in-out hover:bg-opacity-30 hover:text-white"
                     href="#0"
                   >
                     <svg

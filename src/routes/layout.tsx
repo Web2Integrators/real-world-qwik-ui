@@ -3,6 +3,10 @@ import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$, type RequestHandler } from "@builder.io/qwik-city";
 import Header from "~/components/ui-landing/header";
 
+export interface Product {
+  title: string;
+}
+
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
   // https://qwik.builder.io/docs/caching/
@@ -23,7 +27,7 @@ export const useProductDetails = routeLoader$(async () => {
   if (!res.ok) throw new Error("failed to fetch data");
   const product = await res.json();
 
-  return product as any;
+  return product as Product[];
 });
 
 export const onRequest: RequestHandler = async ({

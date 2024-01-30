@@ -1,27 +1,16 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, createContextId, useContextProvider } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import Hero from "~/components/ui-landing/hero";
+import type { Product} from "./layout";
 import { useProductDetails } from "./layout";
 
+export const CTX = createContextId< Product[] >('CTX');
 export default component$(() => {
   const signal = useProductDetails();
- 
+  useContextProvider(CTX, signal.value);
   return (
     <>
-      {signal.value ? (
-        <ul >
-          {Object.entries(signal.value).map(([key, value]) => (
-            <li key={key}>
-              <strong>{key}:</strong> {value?.title}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <ul>
-          <li>No user data available.</li>
-        </ul>
-      )}
-      <Hero></Hero>
+      <Hero userData={signal.value}></Hero>
     </>
   );
 });

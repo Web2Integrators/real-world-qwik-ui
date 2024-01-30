@@ -73,7 +73,7 @@ export default  component$(() =>{
       >
         <ul class="border border-transparent [background:linear-gradient(theme(colors.slate.900),_theme(colors.slate.900))_padding-box,_conic-gradient(theme(colors.slate.400),_theme(colors.slate.700)_25%,_theme(colors.slate.700)_75%,_theme(colors.slate.400)_100%)_border-box] rounded-lg px-4 py-1.5">
           <li>
-            <a class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" href="/about">About</a>
+            <a class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" href="/reactivity">Reacivity</a>
           </li>
           <li>
             <a class="flex font-medium text-sm text-slate-300 hover:text-white py-1.5" href="/integrations">Integrations</a>

@@ -17,9 +17,9 @@ export default component$(() => {
                 <li>
                   <a
                     class="mx-4 text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white lg:mx-5"
-                    href="/about"
+                    href="/reactivity"
                   >
-                    About
+                    Reactivity
                   </a>
                 </li>
                 <li>
@@ -27,7 +27,7 @@ export default component$(() => {
                     class="mx-4 text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white lg:mx-5"
                     href="/integrations"
                   >
-                    Integrations
+                    Link2
                   </a>
                 </li>
                 <li>
@@ -35,7 +35,7 @@ export default component$(() => {
                     class="mx-4 text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white lg:mx-5"
                     href="/pricing"
                   >
-                    Pricing
+                    Link3
                   </a>
                 </li>
                 <li>
@@ -43,7 +43,7 @@ export default component$(() => {
                     class="mx-4 text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white lg:mx-5"
                     href="/customers"
                   >
-                    Customers
+                    Link4
                   </a>
                 </li>
                 <li>
@@ -51,7 +51,7 @@ export default component$(() => {
                     class="mx-4 text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white lg:mx-5"
                     href="/changelog"
                   >
-                    Changelog
+                    Link5
                   </a>
                 </li>
               </ul>
